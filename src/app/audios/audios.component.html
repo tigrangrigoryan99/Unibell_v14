@@ -1,0 +1,8 @@
+<main class="main">
+  <app-audio-list class="main__list"
+                  (audioDataEmitter)="audioData = $event"
+  ></app-audio-list>
+  <ng-container *ngIf="audioPlayerService.showAudioPlayer$ | async">
+    <app-player [audioData]="audioData" class="main__player"></app-player>
+  </ng-container>
+</main>
